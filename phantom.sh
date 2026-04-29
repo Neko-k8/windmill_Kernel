@@ -24,8 +24,8 @@ CR_RAMDISK="$CR_DIR/PHANTOM/universal7570"
 CR_KERNEL="$CR_OUT_DIR/arch/arm64/boot/Image" # Get Image from the out directory
 CR_DTB="$CR_DIR/boot.img-dtb"
 
-CR_VERSION="V2"
-CR_NAME="PhantomKernel"
+CR_VERSION="V1"
+CR_NAME="WindmillKernel"
 CR_JOBS=$(nproc --all)
 CR_ANDROID="q"
 CR_PLATFORM="10.0.0"
