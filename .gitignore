@@ -74,7 +74,7 @@ GPATH
 GRTAGS
 GSYMS
 GTAGS
-
+drivers/kernelsu
 *.rej
 *.orig
 *~
@@ -91,7 +91,6 @@ x509.genkey
 *.fw*
 *.bin*
 arch/arm64/kernel/vdso/vdso-offsets.h
-net/wireguard/
 crypto/asymmetric_keys/x509-asn1.c
 crypto/asymmetric_keys/x509-asn1.h
 crypto/asymmetric_keys/x509_rsakey-asn1.c
@@ -104,7 +103,6 @@ kernel/time/timeconst.h
 lib/crc32table.h
 lib/gen_crc32table
 lib/oid_registry_data.c
-net/wireless/regdb.c
 scripts/asn1_compiler
 scripts/basic/bin2c
 scripts/basic/fixdep
