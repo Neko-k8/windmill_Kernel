@@ -97,9 +97,9 @@ crypto/asymmetric_keys/x509_rsakey-asn1.c
 crypto/asymmetric_keys/x509_rsakey-asn1.h
 firmware/
 AIK-Linux/
+out/
 security/selinux/flask.h
 security/selinux/av_permissions.h
-out/
 kernel/config_data.h
 kernel/time/hz.bc
 kernel/time/timeconst.h
