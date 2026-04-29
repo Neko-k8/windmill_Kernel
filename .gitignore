@@ -95,8 +95,7 @@ crypto/asymmetric_keys/x509-asn1.c
 crypto/asymmetric_keys/x509-asn1.h
 crypto/asymmetric_keys/x509_rsakey-asn1.c
 crypto/asymmetric_keys/x509_rsakey-asn1.h
-firmware/five/ffffffff000000000000000000000072.tlbin
-firmware/five/ffffffff000000000000000000000072.tlbin.gen.S
+firmware/
 kernel/config_data.h
 kernel/time/hz.bc
 kernel/time/timeconst.h
