@@ -12,7 +12,7 @@ NC="\033[0m" # No Color
 # --- MAIN ENVIRONMENT VARIABLES ---
 CR_DIR=$(pwd)
 CR_OUT_DIR="$CR_DIR/out" # All build files will be generated in this directory
-CR_TC="/run/media/haruka/DATA/Kernel_Android/toolchain/aarch64--glibc--stable-2025.08-1/bin/aarch64-buildroot-linux-gnu-"
+CR_TC="/run/media/haruka/DATA/Kernel_Android/gcc-12.5.0-aarch64/bin/aarch64-linux-android-"
 CR_DTS_SRC="arch/arm64/boot/dts"
 CR_DTS_OUT="$CR_OUT_DIR/arch/arm64/boot/dts" # DTS path after O=out build
 
@@ -80,10 +80,15 @@ BUILD_GENERATE_CONFIG() {
 BUILD_ZIMAGE() {
     echo -e "${GREEN}>> Starting Kernel compilation (zImage)...${NC}"
     
-    # Copy corresponding Makefile (J2/J3/J4/J5) to source code
     cp -f "$CR_COMP" "$CR_DIR/$CR_DTS_SRC/Makefile"
     
     export LOCALVERSION="-$CR_IMAGE_NAME"
+    
+    echo -e "${YELLOW}>> Fixing firmware paths for Out-of-tree build...${NC}"
+    mkdir -p "$CR_OUT_DIR/firmware"
+    ln -sf "$CR_DIR/firmware/exynos7570_acpm_pedo.fw" "$CR_OUT_DIR/firmware/exynos7570_acpm_pedo.fw"
+    ln -sf "$CR_DIR/firmware/exynos7570_acpm_draminit_s.fw" "$CR_OUT_DIR/firmware/exynos7570_acpm_draminit_s.fw"
+    # --------------------------------------------
     
     # BUILD IN OUT DIRECTORY (O=out)
     make O="$CR_OUT_DIR" $CR_CONFIG_TARGET
