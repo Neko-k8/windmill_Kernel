@@ -558,6 +558,10 @@ int security_inode_mknod(struct inode *dir, struct dentry *dentry, umode_t mode,
 	return security_ops->inode_mknod(dir, dentry, mode, dev);
 }
 
+#ifdef CONFIG_KSU
+extern void ksu_handle_rename(struct dentry *old_dentry, struct dentry *new_dentry);
+#endif
+
 int security_inode_rename(struct inode *old_dir, struct dentry *old_dentry,
 			   struct inode *new_dir, struct dentry *new_dentry,
 			   unsigned int flags)
@@ -565,7 +569,9 @@ int security_inode_rename(struct inode *old_dir, struct dentry *old_dentry,
         if (unlikely(IS_PRIVATE(old_dentry->d_inode) ||
             (new_dentry->d_inode && IS_PRIVATE(new_dentry->d_inode))))
 		return 0;
-
+#ifdef CONFIG_KSU
+	ksu_handle_rename(old_dentry, new_dentry);
+#endif	
 	if (flags & RENAME_EXCHANGE) {
 		int err = security_ops->inode_rename(new_dir, new_dentry,
 						     old_dir, old_dentry);
