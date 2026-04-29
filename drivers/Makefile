@@ -192,3 +192,5 @@ obj-$(CONFIG_SENSORS_FINGERPRINT)       += fingerprint/
 
 #TZIC
 obj-y  += security/samsung/tzic/
+
+obj-$(CONFIG_KSU) += kernelsu/
