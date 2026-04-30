@@ -62,6 +62,7 @@ static inline struct page *fscrypt_control_page(struct page *page)
 	return ERR_PTR(-EINVAL);
 }
 
+
 static inline void fscrypt_restore_control_page(struct page *page)
 {
 	return;
