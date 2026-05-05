@@ -12,7 +12,7 @@ NC="\033[0m" # No Color
 # --- MAIN ENVIRONMENT VARIABLES ---
 CR_DIR=$(pwd)
 CR_OUT_DIR="$CR_DIR/out" # All build files will be generated in this directory
-CR_TC="/run/media/haruka/DATA/Kernel_Android/gcc-12.5.0-aarch64/bin/aarch64-linux-android-"
+CR_TC="/run/media/haruka/DATA/Kernel_Android/prebuilts_gcc_linux-x86_aarch64_aarch64-linaro-7/bin/aarch64-linux-gnu-"
 CR_DTS_SRC="arch/arm64/boot/dts"
 CR_DTS_OUT="$CR_OUT_DIR/arch/arm64/boot/dts" # DTS path after O=out build
 
